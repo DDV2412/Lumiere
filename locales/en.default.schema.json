@@ -44,52 +44,52 @@
           "label": "Font size scale"
         }
       }
-    },
-    "sections": {
-      "announcement-bar": {
-        "name": "Announcement Bar",
-        "blocks": {
-          "announcement": {
-            "name": "Announcement",
-            "settings": {
-              "text": {
-                "label": "Text",
-                "default": "Free shipping on all orders over $50"
-              },
-              "link": {
-                "label": "Link"
-              },
-              "cta_label": {
-                "label": "Link Text",
-                "default": "Discover Now"
-              }
+    }
+  },
+  "sections": {
+    "announcement-bar": {
+      "name": "Announcement Bar",
+      "blocks": {
+        "announcement": {
+          "name": "Announcement",
+          "settings": {
+            "text": {
+              "label": "Text",
+              "default": "Free shipping on all orders over $50"
+            },
+            "link": {
+              "label": "Link"
+            },
+            "cta_label": {
+              "label": "Link Text",
+              "default": "Discover Now"
             }
           }
-        },
-        "presets": {
-          "name": "Announcement bar"
         }
       },
-      "header-group": {
-        "name": "Header Group"
-      },
-      "headers": {
-        "name": "Navigarion Bar",
-        "presets": {
-          "name": "Navigarion Bar"
-        }
-      },
-      "product-list": {
-        "name": "Product List",
-        "presets": {
-          "name": "Product List"
-        }
-      },
-      "product-list-slider": {
-        "name": "Product List Slider",
-        "presets": {
-          "name": "Product List Slider"
-        }
+      "presets": {
+        "name": "Announcement bar"
+      }
+    },
+    "header-group": {
+      "name": "Header Group"
+    },
+    "headers": {
+      "name": "Navigarion Bar",
+      "presets": {
+        "name": "Navigarion Bar"
+      }
+    },
+    "product-list": {
+      "name": "Product List",
+      "presets": {
+        "name": "Product List"
+      }
+    },
+    "product-list-slider": {
+      "name": "Product List Slider",
+      "presets": {
+        "name": "Product List Slider"
       }
     }
   }
