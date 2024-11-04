@@ -9,7 +9,11 @@
  */
 {
   "current": {
-    "logo_max_width": 90
+    "logo_image": "shopify://shop_images/logo_color.png",
+    "logo_max_width": 90,
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
