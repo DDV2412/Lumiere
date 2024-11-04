@@ -73,6 +73,24 @@
     },
     "header-group": {
       "name": "Header Group"
+    },
+    "headers": {
+      "name": "Navigarion Bar",
+      "presets": {
+        "name": "Navigarion Bar"
+      }
+    },
+    "product-list": {
+      "name": "Product List",
+      "presets": {
+        "name": "Product List"
+      }
+    },
+    "product-list-slider": {
+      "name": "Product List Slider",
+      "presets": {
+        "name": "Product List Slider"
+      }
     }
   }
 }
