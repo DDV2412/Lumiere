@@ -19,7 +19,14 @@
                   </div>
                   <div class="banner-image">
                     <img
-                      src="{{ block.settings.image | image_url: 'original'  }}"
+                      srcset="
+                        {% if block.settings.image.width >= 288 %}{{ block.settings.image | image_url: width: 288 }} 288w,{% endif %}
+                        {% if block.settings.image.width >= 576 %}{{ block.settings.image | image_url: width: 576 }} 576w,{% endif %}
+                        {% if block.settings.image.width >= 550 %}{{ block.settings.image | image_url: width: 550 }} 550w,{% endif %}
+                        {% if block.settings.image.width >= 1100 %}{{ block.settings.image | image_url: width: 1100 }} 1100w,{% endif %}
+                        {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
+                      "
+                      src="{{ block.settings.image | image_url: width: 1000, height: 300  }}"
                       alt="{{ block.settings.title }}"
                       width="1000"
                       height="300" />
