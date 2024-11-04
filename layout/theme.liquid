@@ -14,7 +14,7 @@
         href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
-    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+    {%- unless settings.header_font.system? and settings.body_font.system? -%}
       <link
         rel="preconnect"
         href="https://fonts.shopifycdn.com"
@@ -39,13 +39,68 @@
 
     {{ content_for_header }}
 
-    {{ 'globals.css.liquid' | asset_url | stylesheet_tag }}
+    {{ 'globals.css' | asset_url | stylesheet_tag }}
 
-    <script src="{{ 'globals.js.liquid' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'globals.js' | asset_url }}" defer="defer"></script>
+
+    {%- liquid
+      assign body_font_bold = settings.body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+    %}
+
+    {% style %}
+      {{ settings.body_font | font_face: font_display: 'swap' }}{{ body_font_bold | font_face: font_display: 'swap' }}{{ body_font_italic | font_face: font_display: 'swap' }}{{ body_font_bold_italic | font_face: font_display: 'swap' }}{{ settings.header_font | font_face: font_display: 'swap' }}:root {
+        --font-family-body: {{ settings.body_font.family }};
+        --font-family-header: {{ settings.header_font.family }};
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        height: 100%;
+      }
+
+      body {
+        font-family: var(--font-family-body);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-family-header);
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font-family: var(--font-family-body);
+      }
+
+    {% endstyle %}
+
   </head>
   <body>
-    <main role="main" tabindex="-1">
+    <header class="header">
+      {%- sections 'header-group' -%}
+    </header>
+    <main
+      class="main-wrapper"
+      role="main"
+      tabindex="-1">
       {{ content_for_layout }}
     </main>
+    {%- render 'footer' -%}
   </body>
 </html>

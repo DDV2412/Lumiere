@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "home-hero": {
+      "type": "home-hero",
+      "blocks": {
+        "slider-0": {
+          "type": "slide",
+          "settings": {
+            "slider_image": "",
+            "tagline": "Our Collections",
+            "title": "Explore Unique Styles",
+            "description": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion.",
+            "cta_link": "",
+            "cta_label": "Discover Now"
+          }
+        },
+        "product": {
+          "type": "product",
+          "settings": {
+            "product_1": "",
+            "product_2": "",
+            "product_3": ""
+          }
+        }
+      },
+      "order": ["slider-0", "product"]
+    },
+    "product-list-slider": {
+      "type": "product-list-slider"
+    },
+    "banner": {
+      "type": "banner"
+    },
+    "product-list": {
+      "type": "product-list"
+    }
+  },
+  "order": ["home-hero", "product-list-slider", "banner", "product-list"]
+}

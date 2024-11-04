@@ -1,0 +1,54 @@
+<div class="announcement-component">
+  {%- for block in section.blocks -%}
+    {%- if block.settings.text != blank -%}
+      {%- if block.settings.link != blank -%}
+        <div class="announcement-content">
+          <p class="announcement-text">{{ block.settings.text }}</p>
+        </div>
+        <a href="{{ block.settings.link }}" class="announcement-button">
+          {{ block.settings.cta_label }}
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.announcement-bar.name",
+    "max_blocks": 1,
+    "blocks": [
+      {
+        "type": "announcement",
+        "name": "t:sections.announcement-bar.blocks.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "t:sections.announcement-bar.blocks.setting.text.label",
+            "default": "t:sections.announcement-bar.blocks.setting.text.default"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "t:sections.announcement-bar.blocks.setting.url.label"
+          }, {
+            "type": "text",
+            "id": "cta_label",
+            "label": "t:sections.announcement-bar.blocks.setting.cta_label.label",
+            "default": "t:sections.announcement-bar.blocks.setting.cta_label.default"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.announcement-bar.presets.name",
+        "blocks": [
+          {
+            "type": "announcement"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

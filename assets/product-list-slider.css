@@ -1,0 +1,16 @@
+.section-title-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.product-list {
+    margin-top: 2.5em;
+}

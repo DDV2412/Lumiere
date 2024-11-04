@@ -1,0 +1,12 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "logo_max_width": 90
+    }
+  },
+  "header_font": "playfair_display_n4",
+  "heading_font_size": 100,
+  "body_font": "lato_n4",
+  "body_font_size": 100
+}

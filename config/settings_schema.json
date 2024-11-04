@@ -11,8 +11,72 @@
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "t:settings_schema.logo.settings.logo_image.label"
+      },
+      {
+        "type": "range",
+        "id": "logo_max_width",
+        "label": "t:settings_schema.logo.settings.logo_max_width.label",
+        "min": 80,
+        "max": 300,
+        "step": 10,
+        "default": 100,
+        "unit": "px"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon_image",
+        "label": "t:settings_schema.logo.settings.favicon_image.label",
+        "info": "t:settings_schema.logo.settings.favicon_image.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.typography.name",
+    "settings": [
+      {
         "type": "header",
-        "content": "t:settings_schema.colors.settings.header__1.content"
+        "content": "t:settings_schema.typography.settings.header__1.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "header_font",
+        "default": "playfair_display_n4",
+        "label": "t:settings_schema.typography.settings.header_font.label",
+        "info": "t:settings_schema.typography.settings.header_font.info"
+      },
+      {
+        "type": "range",
+        "id": "heading_size",
+        "label": "t:settings_schema.typography.settings.heading_size.label",
+        "min": 100,
+        "max": 150,
+        "step": 1,
+        "default": 100,
+        "unit": "%"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.typography.settings.header__2.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "default": "lato_n4",
+        "label": "t:settings_schema.typography.settings.body_font.label",
+        "info": "t:settings_schema.typography.settings.body_font.info"
+      },
+      {
+        "type": "range",
+        "id": "body_font_size",
+        "label": "t:settings_schema.typography.settings.body_font_size.label",
+        "min": 100,
+        "max": 130,
+        "step": 1,
+        "default": 100,
+        "unit": "%"
       }
     ]
   }

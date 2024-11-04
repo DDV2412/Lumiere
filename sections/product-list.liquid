@@ -1,0 +1,31 @@
+{{ 'product-list.css' | asset_url | stylesheet_tag }}
+
+
+<section class="section-component">
+  <div class="container">
+    <div class="section-title-content__center">
+      <div class="section-title">
+        <h2>For Sale</h2>
+        <p>Explore Unique Styles</p>
+      </div>
+    </div>
+    <div class="product-list__content">
+      {% for index in (1..10) %}
+        {%- render 'product-card' -%}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "t:sections.product-list.name",
+    "max_blocks": 10,
+    "settings": [],
+    "presets": [
+      {
+        "name": "t:sections.product-list.presets.name"
+      }
+    ]
+  }
+{% endschema %}

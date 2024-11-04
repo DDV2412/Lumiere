@@ -1,0 +1,41 @@
+{{ 'banner.css' | asset_url | stylesheet_tag }}
+{{ 'swiper.css' | asset_url | stylesheet_tag }}
+
+<section class="section-component">
+  <div class="container">
+    <div class="swiper-main-component">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="banner-component">
+              <div class="banner-content">
+                <div class="banner-content-title">Banner Title</div>
+                <div class="banner-content-description">Banner Description</div>
+                <div class="banner-content-button">
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+              </div>
+              <div class="banner-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-dots-content">
+        <div class="swiper-dot"></div>
+        <div class="swiper-dot swiper-dot-active"></div>
+        <div class="swiper-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "t:sections.banner.name",
+    "presets": [
+      {
+        "name": "t:sections.banner.presets.name"
+      }
+    ]
+  }
+{% endschema %}

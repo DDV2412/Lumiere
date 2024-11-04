@@ -1,0 +1,29 @@
+.section-title-content__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section-title {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.product-list__content {
+    margin-top: 2.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .product-list__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}

@@ -1,0 +1,38 @@
+{{ 'product-list-slider.css' | asset_url | stylesheet_tag }}
+
+
+<section class="section-component">
+  <div class="container">
+    <div class="section-title-content">
+      <div class="section-title">
+        <h2>For Sale</h2>
+        <p>Explore Unique Styles</p>
+      </div>
+      <div class="section-button">
+        <a href="/collections/all" class="button-primary button-small">View All</a>
+      </div>
+    </div>
+    <div class="product-list">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slider">
+            {%- render 'product-card' -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "t:sections.product-list-slider.name",
+    "max_blocks": 10,
+    "settings": [],
+    "presets": [
+      {
+        "name": "t:sections.product-list-slider.presets.name"
+      }
+    ]
+  }
+{% endschema %}

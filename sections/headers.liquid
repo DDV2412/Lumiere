@@ -1,0 +1,237 @@
+<div class="navbar-component">
+  <div class="navbar">
+    <div class="navbar-top">
+      <a href="{{ routes.root_url }}" class="brand-logo">
+        <image
+          src="{{ settings.logo_image | asset_url }}"
+          alt="{{ shop.name }}"
+          width="{{ settings.logo_max_width }}"
+          height="32" />
+      </a>
+      <div class="navbar-top-right">
+        <div class="navbar-top-right search-bar">
+          <div class="search-component">
+            <input
+              type="text"
+              class="search-field"
+              placeholder="Search" />
+            <button class="search-button">
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none" /><circle
+                    cx="10"
+                    cy="10"
+                    r="7" /><line
+                    x1="21"
+                    y1="21"
+                    x2="15"
+                    y2="15" /></svg>
+              </div>
+            </button>
+          </div>
+          <div class="nav-line"></div>
+          <div class="dropdown-component">
+            <button class="dropdown-button">
+              <span>🇺🇸 EN</span>
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none" /><path d="M6 9l6 6l6 -6" /></svg>
+              </div>
+            </button>
+            <div class="dropdown-list" role="list">
+              <a class="dropdown-content" role="listitem">
+                <span>🇺🇸 EN</span>
+              </a>
+              <a class="dropdown-content" role="listitem">
+                <span>🇺🇸 EN</span>
+              </a>
+              <a class="dropdown-content" role="listitem">
+                <span>🇺🇸 EN</span>
+              </a>
+              <a class="dropdown-content" role="listitem">
+                <span>🇺🇸 EN</span>
+              </a>
+            </div>
+          </div>
+          <div class="dropdown-component">
+            <button class="dropdown-button">$ USD
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none" /><path d="M6 9l6 6l6 -6" /></svg>
+              </div>
+            </button>
+            <div class="dropdown-list" role="list">
+              <a class="dropdown-content" role="listitem">$ USD</a>
+              <a class="dropdown-content" role="listitem">$ USD</a>
+              <a class="dropdown-content" role="listitem">$ USD</a>
+              <a class="dropdown-content" role="listitem">$ USD</a>
+            </div>
+          </div>
+          <button class="dropdown-button">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="icon icon-tabler icons-tabler-filled icon-tabler-user"><path
+                  stroke="none"
+                  d="M0 0h24v24H0z"
+                  fill="none" /><path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" /><path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" /></svg>
+
+            </div>
+            <span>Account</span>
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path
+                  stroke="none"
+                  d="M0 0h24v24H0z"
+                  fill="none" /><path d="M6 9l6 6l6 -6" /></svg>
+            </div>
+          </button>
+        </div>
+        <button class="cart-button">
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"><path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none" /><path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" /><path d="M9 11v-5a3 3 0 0 1 6 0v5" /></svg>
+
+          </div>
+          <span class="cart-item-count">0</span>
+        </button>
+        <button
+          role="button"
+          class="menu-toggle"
+          id="menu-toggle">
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep"><path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none" /><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="navbar-bottom">
+      <nav class="navbar-menu-content">
+        <ul class="navbar-menu" role=list>
+          <li role=listitem>
+            <a>Home</a>
+          </li>
+          <li role=listitem>
+            <a>About</a>
+          </li>
+          <li role=listitem>
+            <a>Contact</a>
+          </li>
+          <li role=listitem>
+            <a>Login</a>
+          </li>
+        </ul>
+        <div class="profile-component">
+          <div class="profile-content">
+            <div class="profile-image"></div>
+            <div class="profile-detail">
+              <div class="profile-name">John Doe</div>
+              <div class="profile-email">mail@shopify.com</div>
+            </div>
+          </div>
+
+          <div class="autentication-component">
+            <a class="button-primary">Sign In</a>
+            <a class="button-primary">Sign Up</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.querySelector('.navbar-bottom');
+    menuToggle.addEventListener('click', function () {
+      navbar.classList.toggle('is-active');
+    });
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "t:sections.headers.name",
+    "presets": [
+      {
+        "name": "t:sections.headers.presets.name"
+      }
+    ]
+  }
+{% endschema %}
