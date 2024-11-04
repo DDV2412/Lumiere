@@ -19,13 +19,6 @@
                   <a href="{{ block.settings.cta_link }}" class="home-hero-button">{{ block.settings.cta_label }}</a>
                 </div>
                 <img
-                  srcset="
-                    {% if block.settings.slider_image.width >= 288 %}{{ block.settings.slider_image | image_url: width: 288 }} 288w,{% endif %}
-                    {% if block.settings.slider_image.width >= 576 %}{{ block.settings.slider_image | image_url: width: 576 }} 576w,{% endif %}
-                    {% if block.settings.slider_image.width >= 550 %}{{ block.settings.slider_image | image_url: width: 550 }} 550w,{% endif %}
-                    {% if block.settings.slider_image.width >= 1100 %}{{ block.settings.slider_image | image_url: width: 1100 }} 1100w,{% endif %}
-                    {{ block.settings.slider_image | image_url }} {{ block.settings.slider_image.width }}w
-                  "
                   src="{{ block.settings.slider_image | image_url: width: 800, height: 600  }}"
                   alt="{{ block.settings.title }}"
                   width="800"
@@ -46,7 +39,7 @@
             <p>{{ block.settings.product_summary }}</p>
           </div>
           <img
-            src="{{ block.settings.product_image | image_url  }}"
+            src="{{ block.settings.product_image | image_url: width: 800, height: 600  }}"
             alt="{{ block.settings.product_title }}"
             width="800"
             height="600"
