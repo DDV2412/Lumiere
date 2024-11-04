@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "home-hero": {
@@ -23,13 +32,15 @@
           }
         }
       },
-      "block_order": ["slideshow-0", "product-0"]
+      "block_order": [
+        "slideshow-0",
+        "product-0"
+      ],
+      "settings": {
+      }
     },
     "product-list-slider": {
       "type": "product-list-slider",
-      "settings": {
-        "hidden_section_title": false
-      },
       "blocks": {
         "product-0": {
           "type": "product",
@@ -40,7 +51,12 @@
           }
         }
       },
-      "block_order": ["product-0"]
+      "block_order": [
+        "product-0"
+      ],
+      "settings": {
+        "hidden_section_title": false
+      }
     },
     "banner": {
       "type": "banner",
@@ -56,26 +72,38 @@
           }
         }
       },
-      "block_order": ["banner-0"]
+      "block_order": [
+        "banner-0"
+      ],
+      "settings": {
+      }
     },
     "product-list": {
       "type": "product-list",
-      "settings": {
-        "hidden_section_title": false
-      },
       "blocks": {
         "product-0": {
           "type": "product",
           "settings": {
             "section_title": "For Sale",
             "section_tagline": "Explore Unique Styles",
-            "url": "",
-            "collection_list": []
+            "collection_list": [
+
+            ]
           }
         }
       },
-      "block_order": ["product-0"]
+      "block_order": [
+        "product-0"
+      ],
+      "settings": {
+        "hidden_section_title": false
+      }
     }
   },
-  "order": ["home-hero", "product-list-slider", "banner", "product-list"]
+  "order": [
+    "home-hero",
+    "product-list-slider",
+    "banner",
+    "product-list"
+  ]
 }
