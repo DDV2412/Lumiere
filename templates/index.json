@@ -3,8 +3,8 @@
     "home-hero": {
       "type": "home-hero",
       "blocks": {
-        "slider-0": {
-          "type": "slide",
+        "slideshow-0": {
+          "type": "slideshow",
           "settings": {
             "slider_image": "",
             "tagline": "Our Collections",
@@ -14,25 +14,67 @@
             "cta_label": "Discover Now"
           }
         },
-        "product": {
+        "product-0": {
           "type": "product",
           "settings": {
-            "product_1": "",
-            "product_2": "",
-            "product_3": ""
+            "product_image": "",
+            "product_title": "Classic T-Shirt",
+            "product_summary": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion."
           }
         }
       },
-      "order": ["slider-0", "product"]
+      "block_order": ["slideshow-0", "product-0"]
     },
     "product-list-slider": {
-      "type": "product-list-slider"
+      "type": "product-list-slider",
+      "settings": {
+        "hidden_section_title": false
+      },
+      "blocks": {
+        "product-0": {
+          "type": "product",
+          "settings": {
+            "section_title": "For Sale",
+            "section_tagline": "Explore Unique Styles",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": ["product-0"]
     },
     "banner": {
-      "type": "banner"
+      "type": "banner",
+      "blocks": {
+        "banner-0": {
+          "type": "banner",
+          "settings": {
+            "title": "Explore Unique Styles",
+            "description": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion.",
+            "url": "",
+            "url_title": "Discover Now",
+            "image": ""
+          }
+        }
+      },
+      "block_order": ["banner-0"]
     },
     "product-list": {
-      "type": "product-list"
+      "type": "product-list",
+      "settings": {
+        "hidden_section_title": false
+      },
+      "blocks": {
+        "product-0": {
+          "type": "product",
+          "settings": {
+            "section_title": "For Sale",
+            "section_tagline": "Explore Unique Styles",
+            "url": "",
+            "collection_list": []
+          }
+        }
+      },
+      "block_order": ["product-0"]
     }
   },
   "order": ["home-hero", "product-list-slider", "banner", "product-list"]

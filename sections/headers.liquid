@@ -3,7 +3,7 @@
     <div class="navbar-top">
       <a href="{{ routes.root_url }}" class="brand-logo">
         <image
-          src="{{ settings.logo_image | asset_url }}"
+          src="{{ settings.logo_image | image_url: 'original'  }}"
           alt="{{ shop.name }}"
           width="{{ settings.logo_max_width }}"
           height="32" />

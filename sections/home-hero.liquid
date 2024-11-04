@@ -7,59 +7,47 @@
     <div class="swiper-main-component home-hero-slider-component">
       <div class="swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="home-hero-title-content">
-              <p>Our Collections</p>
-              <h1>Explore Unique Styles</h1>
-            </div>
-            <p>Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion.</p>
-            <div class="home-hero-cta">
-              <a href="/collections/all" class="home-hero-button">Discover Now</a>
-            </div>
-            <img
-              src="{{ '46845.jpeg' | asset_url }}"
-              alt="home-hero-1"
-              width="800"
-              height="600"
-              class="home-hero-image" />
-          </div>
-
+          {% for block in section.blocks %}
+            {% if block.type == 'slideshow' %}
+              <div class="swiper-slide">
+                <div class="home-hero-title-content">
+                  <p>{{ block.settings.tagline }}</p>
+                  <h1>{{ block.settings.title }}</h1>
+                </div>
+                <p>{{ block.settings.description }}</p>
+                <div class="home-hero-cta">
+                  <a href="{{ block.settings.cta_link }}" class="home-hero-button">{{ block.settings.cta_label }}</a>
+                </div>
+                <img
+                  src="{{ block.settings.slider_image | image_url: 'original'  }}"
+                  alt="{{ block.settings.title }}"
+                  width="800"
+                  height="600"
+                  class="home-hero-image" />
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
       <div class="swiper-dots-content"></div>
     </div>
-    <div class="home-hero-product__1">
-      <div class="home-hero-product__details">
-        <h2 class="home-hero-product__title">Men's Summer Sneaker</h2>
-        <p>Big sale of this week</p>
-      </div>
-      <img
-        src="{{ '46845.jpeg' | asset_url }}"
-        alt="home-hero-1"
-        width="800"
-        height="600"
-        class="home-hero-image" />
-    </div>
-    <div class="home-hero-product__2">
-      <h2 class="home-hero-product__title">Men's Summer Sneaker</h2>
-      <p>Big sale of this week</p>
-      <img
-        src="{{ '46845.jpeg' | asset_url }}"
-        alt="home-hero-1"
-        width="800"
-        height="600"
-        class="home-hero-image" />
-    </div>
-    <div class="home-hero-product__3">
-      <h2 class="home-hero-product__title">Men's Summer Sneaker</h2>
-      <p>Big sale of this week</p>
-      <img
-        src="{{ '46845.jpeg' | asset_url }}"
-        alt="home-hero-1"
-        width="800"
-        height="600"
-        class="home-hero-image" />
-    </div>
+    {% for block in section.blocks %}
+      {% if block.type == 'product' %}
+        <div class="home-hero-product__{{ forloop.index |  minus: 1 }}">
+          <div class="home-hero-product__details">
+            <h2 class="home-hero-product__title">{{ block.settings.product_title }}</h2>
+            <p>{{ block.settings.product_summary }}</p>
+          </div>
+          <img
+            src="{{ block.settings.product_image | image_url: 'original'  }}"
+            alt="{{ block.settings.product_title }}"
+            width="800"
+            height="600"
+            class="home-hero-image" />
+        </div>
+      {% endif %}
+
+    {% endfor %}
   </div>
 </div>
 
@@ -97,40 +85,40 @@
     "name": "t:sections.home-hero.name",
     "blocks": [
       {
-        "type": "slide",
-        "name": "t:sections.home-hero.blocks.slide.name",
+        "type": "slideshow",
+        "name": "t:sections.home-hero.blocks.slideshow.name",
         "settings": [
           {
             "type": "image_picker",
             "id": "slider_image",
-            "label": "t:sections.home-hero.blocks.slide.setting.slider_image.label"
+            "label": "t:sections.home-hero.blocks.slideshow.settings.slider_image.label"
           },
           {
             "type": "text",
             "id": "tagline",
-            "label": "t:sections.home-hero.blocks.slide.setting.subtitle.label",
-            "default": "t:sections.home-hero.blocks.slide.setting.subtitle.default"
+            "label": "t:sections.home-hero.blocks.slideshow.settings.tagline.label",
+            "default": "t:sections.home-hero.blocks.slideshow.settings.tagline.default"
           },
           {
             "type": "text",
             "id": "title",
-            "label": "t:sections.home-hero.blocks.slide.setting.title.label",
-            "default": "t:sections.home-hero.blocks.slide.setting.title.default"
+            "label": "t:sections.home-hero.blocks.slideshow.settings.title.label",
+            "default": "t:sections.home-hero.blocks.slideshow.settings.title.default"
           },
           {
             "type": "text",
             "id": "description",
-            "label": "t:sections.home-hero.blocks.slide.setting.description.label",
-            "default": "t:sections.home-hero.blocks.slide.setting.description.default"
+            "label": "t:sections.home-hero.blocks.slideshow.settings.description.label",
+            "default": "t:sections.home-hero.blocks.slideshow.settings.description.default"
           }, {
             "type": "url",
             "id": "cta_link",
-            "label": "t:sections.home-hero.blocks.slide.setting.cta_link.label"
+            "label": "t:sections.home-hero.blocks.slideshow.settings.cta_link.label"
           }, {
             "type": "text",
             "id": "cta_label",
-            "label": "t:sections.home-hero.blocks.slide.setting.cta_label.label",
-            "default": "t:sections.home-hero.blocks.slide.setting.cta_label.default"
+            "label": "t:sections.home-hero.blocks.slideshow.settings.cta_label.label",
+            "default": "t:sections.home-hero.blocks.slideshow.settings.cta_label.default"
           }
         ]
       }, {
@@ -138,17 +126,19 @@
         "name": "t:sections.home-hero.blocks.product.name",
         "settings": [
           {
-            "type": "product",
-            "id": "product_1",
-            "label": "t:sections.home-hero.blocks.product.setting.product_1.label"
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "t:sections.home-hero.blocks.product.settings.product_image.label"
           }, {
-            "type": "product",
-            "id": "product_2",
-            "label": "t:sections.home-hero.blocks.product.setting.product_2.label"
+            "type": "text",
+            "id": "product_title",
+            "label": "t:sections.home-hero.blocks.product.settings.product_title.label",
+            "default": "t:sections.home-hero.blocks.product.settings.product_title.default"
           }, {
-            "type": "product",
-            "id": "product_3",
-            "label": "t:sections.home-hero.blocks.product.setting.product_3.label"
+            "type": "text",
+            "id": "product_summary",
+            "label": "t:sections.home-hero.blocks.product.settings.product_summary.label",
+            "default": "t:sections.home-hero.blocks.product.settings.product_summary.default"
           }
         ]
       }
@@ -158,7 +148,7 @@
         "name": "t:sections.home-hero.presets.name",
         "blocks": [
           {
-            "type": "slide"
+            "type": "slideshow"
           }, {
             "type": "product"
           }

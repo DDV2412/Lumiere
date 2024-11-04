@@ -82,14 +82,159 @@
     },
     "product-list": {
       "name": "Product List",
+      "settings": {
+        "hidden_section_title": {
+          "label": "Hidden Section Title",
+          "info": "Select this option to hide the section title."
+        }
+      },
+      "blocks": {
+        "product": {
+          "name": "Product List",
+          "settings": {
+            "section_title": {
+              "label": "Section Title",
+              "default": "Featured Products"
+            },
+            "section_tagline": {
+              "label": "Section Tagline",
+              "default": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion."
+            },
+            "collection_list": {
+              "label": "Collection List",
+              "info": "Select a collection to display."
+            }
+          }
+        }
+      },
       "presets": {
         "name": "Product List"
       }
     },
     "product-list-slider": {
       "name": "Product List Slider",
+      "settings": {
+        "hidden_section_title": {
+          "label": "Hidden Section Title",
+          "info": "Select this option to hide the section title."
+        }
+      },
+      "blocks": {
+        "product": {
+          "name": "Product List Slider",
+          "settings": {
+            "section_title": {
+              "label": "Section Title",
+              "default": "Featured Products"
+            },
+            "section_tagline": {
+              "label": "Section Tagline",
+              "default": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion."
+            },
+            "collection": {
+              "label": "Collection",
+              "info": "Select a collection to display."
+            }
+          }
+        }
+      },
       "presets": {
         "name": "Product List Slider"
+      }
+    },
+    "home-hero": {
+      "name": "Home Hero",
+      "blocks": {
+        "slideshow": {
+          "name": "Slideshow",
+          "settings": {
+            "slider_image": {
+              "label": "Slider Image",
+              "info": "Upload an image to replace the default slider image."
+            },
+            "tagline": {
+              "label": "Tagline",
+              "info": "Add a tagline to describe the collection.",
+              "default": "Our Collections"
+            },
+            "title": {
+              "label": "Title",
+              "info": "Add a title to describe the collection.",
+              "default": "Explore Unique Styles"
+            },
+            "description": {
+              "label": "Description",
+              "info": "Add a description to describe the collection.",
+              "default": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion."
+            },
+            "cta_link": {
+              "label": "CTA Link"
+            },
+            "cta_label": {
+              "label": "CTA Label",
+              "info": "Add a call-to-action label.",
+              "default": "Discover Now"
+            }
+          }
+        },
+
+        "product": {
+          "name": "Top Product",
+          "settings": {
+            "product_image": {
+              "label": "Product Image",
+              "info": "Upload an image to replace the default product image."
+            },
+            "product_title": {
+              "label": "Product Title",
+              "info": "Add a title to describe the product.",
+              "default": "Classic T-Shirt"
+            },
+            "product_summary": {
+              "label": "Product Summary",
+              "info": "Add a summary to describe the product.",
+              "default": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion."
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Home Hero"
+      }
+    },
+    "banner": {
+      "name": "Banner",
+      "blocks": {
+        "banner": {
+          "name": "Banner",
+          "settings": {
+            "image": {
+              "label": "Banner Image"
+            },
+            "tagline": {
+              "label": "Tagline",
+              "default": "Our Collections"
+            },
+            "title": {
+              "label": "Title",
+              "default": "Explore Unique Styles"
+            },
+            "description": {
+              "label": "Description",
+              "default": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion."
+            },
+            "url": {
+              "label": "URL"
+            },
+            "url_title": {
+              "label": "CTA Label",
+              "default": "Discover Now"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Banner"
       }
     }
   }

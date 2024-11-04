@@ -421,6 +421,10 @@ button {
     font-weight: 500;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .announcement-component .announcement-button {
     display: flex;
     justify-content: center;

@@ -6,18 +6,28 @@
     <div class="swiper-main-component">
       <div class="swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="banner-component">
-              <div class="banner-content">
-                <div class="banner-content-title">Banner Title</div>
-                <div class="banner-content-description">Banner Description</div>
-                <div class="banner-content-button">
-                  <a href="#" class="btn btn-primary">Shop Now</a>
+          {% for block in section.blocks %}
+            {% if block.type == 'banner' %}
+              <div class="swiper-slide">
+                <div class="banner-component">
+                  <div class="banner-content">
+                    <div class="banner-content-title">{{ block.settings.title }}</div>
+                    <div class="banner-content-description">{{ block.settings.description }}</div>
+                    <div class="banner-content-button">
+                      <a href="{{ block.settings.url }}" class="btn btn-primary">{{ block.settings.url_title }}</a>
+                    </div>
+                  </div>
+                  <div class="banner-image">
+                    <img
+                      src="{{ block.settings.image | image_url: 'original'  }}"
+                      alt="{{ block.settings.title }}"
+                      width="1000"
+                      height="300" />
+                  </div>
                 </div>
               </div>
-              <div class="banner-image"></div>
-            </div>
-          </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
       <div class="swiper-dots-content">
@@ -32,9 +42,49 @@
 {% schema %}
   {
     "name": "t:sections.banner.name",
+    "blocks": [
+      {
+        "type": "banner",
+        "name": "t:sections.banner.blocks.banner.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "t:sections.banner.blocks.banner.settings.title.label",
+            "default": "t:sections.banner.blocks.banner.settings.title.default"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "t:sections.banner.blocks.banner.settings.description.label",
+            "default": "t:sections.banner.blocks.banner.settings.description.default"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "t:sections.banner.blocks.banner.settings.url.label"
+          },
+          {
+            "type": "text",
+            "id": "url_title",
+            "label": "t:sections.banner.blocks.banner.settings.url_title.label",
+            "default": "t:sections.banner.blocks.banner.settings.url_title.default"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.banner.blocks.banner.settings.image.label"
+          }
+        ]
+      }
+    ],
     "presets": [
       {
-        "name": "t:sections.banner.presets.name"
+        "name": "t:sections.banner.presets.name",
+        "blocks": [
+          {
+            "type": "banner"
+          }
+        ]
       }
     ]
   }

@@ -3,26 +3,72 @@
 
 <section class="section-component">
   <div class="container">
-    <div class="section-title-content__center">
-      <div class="section-title">
-        <h2>For Sale</h2>
-        <p>Explore Unique Styles</p>
-      </div>
-    </div>
-    <div class="product-list__content">
-      {% for index in (1..10) %}
-        {%- render 'product-card' -%}
-      {% endfor %}
-    </div>
+    {% for block in section.blocks %}
+      {% if block.type == 'product' %}
+        <div class="section-title-content__center {% if section.settings.hidden_section_title %} hidden {% endif %}">
+          <div class="section-title">
+            <h2>{{ block.settings.section_title }}</h2>
+            <p>{{ block.settings.section_tagline }}</p>
+          </div>
+        </div>
+        <div class="product-list__content">
+          {% assign collections = block.settings.collection_list %}
+          {% for collection in collections %}
+            {% for product in collection.products %}
+              {% render 'product-card'
+                , product: product %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 
 {% schema %}
   {
     "name": "t:sections.product-list.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hidden_section_title",
+        "label": "t:sections.product-list.settings.hidden_section_title.label",
+        "default": false,
+        "info": "t:sections.product-list.settings.hidden_section_title.info"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "t:sections.product-list.blocks.product.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "section_title",
+            "label": "t:sections.product-list.blocks.product.settings.section_title.label",
+            "default": "t:sections.product-list.blocks.product.settings.section_title.default"
+          }, {
+            "type": "text",
+            "id": "section_tagline",
+            "label": "t:sections.product-list.blocks.product.settings.section_tagline.label",
+            "default": "t:sections.product-list.blocks.product.settings.section_tagline.default"
+          }, {
+            "type": "collection_list",
+            "id": "collection_list",
+            "label": "t:sections.product-list.blocks.product.settings.collection_list.label",
+            "info": "t:sections.product-list.blocks.product.settings.collection_list.info"
+          }
+        ]
+      }
+    ],
     "presets": [
       {
-        "name": "t:sections.product-list.presets.name"
+        "name": "t:sections.product-list.presets.name",
+        "blocks": [
+          {
+            "type": "product"
+          }
+        ]
       }
     ]
   }

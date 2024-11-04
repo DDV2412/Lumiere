@@ -3,33 +3,78 @@
 
 <section class="section-component">
   <div class="container">
-    <div class="section-title-content">
-      <div class="section-title">
-        <h2>For Sale</h2>
-        <p>Explore Unique Styles</p>
-      </div>
-      <div class="section-button">
-        <a href="/collections/all" class="button-primary button-small">View All</a>
-      </div>
-    </div>
-    <div class="product-list">
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slider">
-            {%- render 'product-card' -%}
+    {% for block in section.blocks %}
+      {% if block.type == 'product' %}
+        <div class="section-title-content {% if section.settings.hidden_section_title %} hidden {% endif %}">
+          <div class="section-title ">
+            <h2>{{ block.settings.section_title }}</h2>
+            <p>{{ block.settings.section_tagline }}</p>
+          </div>
+          <div class="section-button">
+            <a href="{{ block.settings.collection.url }}" class="button-primary button-small">View All</a>
           </div>
         </div>
-      </div>
-    </div>
+        <div class="product-list">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              {% for product in block.settings.collection.products %}
+                <div class="swiper-slider">
+                  {% render 'product-card'
+                    , product: product %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 
 {% schema %}
   {
     "name": "t:sections.product-list-slider.name",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hidden_section_title",
+        "label": "t:sections.product-list-slider.settings.hidden_section_title.label",
+        "default": false,
+        "info": "t:sections.product-list-slider.settings.hidden_section_title.info"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "t:sections.product-list-slider.blocks.product.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "section_title",
+            "label": "t:sections.product-list-slider.blocks.product.settings.section_title.label",
+            "default": "t:sections.product-list-slider.blocks.product.settings.section_title.default"
+          }, {
+            "type": "text",
+            "id": "section_tagline",
+            "label": "t:sections.product-list-slider.blocks.product.settings.section_tagline.label",
+            "default": "t:sections.product-list-slider.blocks.product.settings.section_tagline.default"
+          }, {
+            "type": "collection",
+            "id": "collection",
+            "label": "t:sections.product-list-slider.blocks.product.settings.collection.label"
+          }
+        ]
+      }
+    ],
     "presets": [
       {
-        "name": "t:sections.product-list-slider.presets.name"
+        "name": "t:sections.product-list-slider.presets.name",
+        "blocks": [
+          {
+            "type": "product"
+          }
+        ]
       }
     ]
   }
