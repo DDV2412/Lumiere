@@ -15,7 +15,18 @@
         "slideshow-0": {
           "type": "slideshow",
           "settings": {
-            "slider_image": "",
+            "slider_image": "shopify://shop_images/46845.jpg",
+            "tagline": "Our Collections",
+            "title": "Explore Unique Styles",
+            "description": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion.",
+            "cta_link": "shopify://collections/all",
+            "cta_label": "Discover Now"
+          }
+        },
+        "slideshow_cEMn3h": {
+          "type": "slideshow",
+          "settings": {
+            "slider_image": "shopify://shop_images/46845.jpg",
             "tagline": "Our Collections",
             "title": "Explore Unique Styles",
             "description": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion.",
@@ -26,7 +37,23 @@
         "product-0": {
           "type": "product",
           "settings": {
-            "product_image": "",
+            "product_image": "shopify://shop_images/24406.jpg",
+            "product_title": "Classic T-Shirt",
+            "product_summary": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion."
+          }
+        },
+        "product_fLtR3t": {
+          "type": "product",
+          "settings": {
+            "product_image": "shopify://shop_images/24406.jpg",
+            "product_title": "Classic T-Shirt",
+            "product_summary": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion."
+          }
+        },
+        "product_3qKCeA": {
+          "type": "product",
+          "settings": {
+            "product_image": "shopify://shop_images/24406.jpg",
             "product_title": "Classic T-Shirt",
             "product_summary": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion."
           }
@@ -34,7 +61,10 @@
       },
       "block_order": [
         "slideshow-0",
-        "product-0"
+        "slideshow_cEMn3h",
+        "product-0",
+        "product_fLtR3t",
+        "product_3qKCeA"
       ],
       "settings": {
       }
@@ -67,8 +97,7 @@
             "title": "Explore Unique Styles",
             "description": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion.",
             "url": "",
-            "url_title": "Discover Now",
-            "image": ""
+            "url_title": "Discover Now"
           }
         }
       },
