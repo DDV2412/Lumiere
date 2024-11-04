@@ -1,6 +1,7 @@
 {{ 'home-hero.css' | asset_url | stylesheet_tag }}
 {{ 'swiper.css' | asset_url | stylesheet_tag }}
 
+{% assign slideshow_count = 0 %}
 
 <div class="home-hero-component">
   <div class="home-hero-content">
@@ -9,6 +10,7 @@
         <div class="swiper-wrapper">
           {% for block in section.blocks %}
             {% if block.type == 'slideshow' %}
+              {% assign slideshow_count = slideshow_count | plus: 1 %}
               <div class="swiper-slide">
                 <div class="home-hero-title-content">
                   <p>{{ block.settings.tagline }}</p>
@@ -33,7 +35,7 @@
     </div>
     {% for block in section.blocks %}
       {% if block.type == 'product' %}
-        <div class="home-hero-product__{{ forloop.index |  minus: 1 }}">
+        <div class="home-hero-product home-hero-product__{{ forloop.index |  minus: slideshow_count }}">
           <div class="home-hero-product__details">
             <h2 class="home-hero-product__title">{{ block.settings.product_title }}</h2>
             <p>{{ block.settings.product_summary }}</p>
@@ -51,8 +53,10 @@
   </div>
 </div>
 
-<script>
-  document.getElementsByName('home-hero-slider-component').forEach(function (element) {
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+  document.querySelectorAll('.home-hero-slider-component').forEach(function (element) {
     const swiperElement = element.querySelector('.swiper');
     new Swiper(swiperElement, {
       loop: true,

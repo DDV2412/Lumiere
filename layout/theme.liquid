@@ -42,7 +42,6 @@
     {{ 'globals.css' | asset_url | stylesheet_tag }}
 
     <script src="{{ 'globals.js' | asset_url }}" defer="defer"></script>
-
     {%- liquid
       assign body_font_bold = settings.body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.body_font | font_modify: 'style', 'italic'

@@ -3,7 +3,7 @@
 
 <section class="section-component">
   <div class="container">
-    <div class="swiper-main-component">
+    <div class="banner-swiper swiper-main-component">
       <div class="swiper">
         <div class="swiper-wrapper">
           {% for block in section.blocks %}
@@ -14,7 +14,7 @@
                     <div class="banner-content-title">{{ block.settings.title }}</div>
                     <div class="banner-content-description">{{ block.settings.description }}</div>
                     <div class="banner-content-button">
-                      <a href="{{ block.settings.url }}" class="btn btn-primary">{{ block.settings.url_title }}</a>
+                      <a href="{{ block.settings.url }}" class="button-primary">{{ block.settings.url_title }}</a>
                     </div>
                   </div>
                   <div class="banner-image">
@@ -30,14 +30,41 @@
           {% endfor %}
         </div>
       </div>
-      <div class="swiper-dots-content">
-        <div class="swiper-dot"></div>
-        <div class="swiper-dot swiper-dot-active"></div>
-        <div class="swiper-dot"></div>
-      </div>
+      <div class="swiper-dots-content"></div>
     </div>
   </div>
 </section>
+
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+  document.querySelectorAll('.banner-swiper').forEach(function (element) {
+    const swiperElement = element.querySelector('.swiper');
+    new Swiper(swiperElement, {
+      loop: true,
+      autoHeight: false,
+      centeredSlides: false,
+      slidesPerView: "auto",
+      mousewheel: {
+        forceToAxis: true
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true
+      },
+      pagination: {
+        el: element.querySelector('.swiper-dots-content'),
+        clickable: true,
+        bulletActiveClass: "swiper-dot-active",
+        bulletClass: "swiper-dot",
+        bulletElement: "div",
+      },
+      slideActiveClass: "is-active",
+      slideDuplicateActiveClass: "is-active"
+    });
+  });
+</script>
 
 {% schema %}
   {

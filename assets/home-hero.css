@@ -64,6 +64,11 @@
     z-index: -1;
 }
 
+.home-hero-product {
+    position: relative;
+    overflow: hidden;
+}
+
 .home-hero-product__1 {
     grid-column: 2 / span 2;
     grid-row: 1;
