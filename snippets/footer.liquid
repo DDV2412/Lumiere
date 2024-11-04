@@ -5,16 +5,41 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-content-item">
-        <div class="footer-content-title">Footer Title</div>
+        <a href="{{ shop.url }}" class="footer-brand">
+          <img
+            src="{{ settings.logo_image | image_url: 'original' }}"
+            alt="Logo"
+            width="{{ settings.logo_max_width }}"
+            height="40">
+        </a>
         <div class="footer-content-description">Footer Description</div>
       </div>
       <div class="footer-content-item">
-        <div class="footer-content-title">Footer Title</div>
-        <div class="footer-content-description">Footer Description</div>
+        <div class="footer-content-title">Collections</div>
+        <div class="footer-menu-list">
+          <a href="#" class="footer-menu-item">Footer Menu Item</a>
+          <a href="#" class="footer-menu-item">Footer Menu Item</a>
+          <a href="#" class="footer-menu-item">Footer Menu Item</a>
+          <a href="#" class="footer-menu-item">Footer Menu Item</a>
+        </div>
       </div>
       <div class="footer-content-item">
-        <div class="footer-content-title">Footer Title</div>
-        <div class="footer-content-description">Footer Description</div>
+        <div class="footer-content-title">Contact</div>
+        <div class="footer-menu-list">
+          <a href="#" class="footer-menu-item">Footer Menu Item</a>
+          <a href="#" class="footer-menu-item">Footer Menu Item</a>
+          <a href="#" class="footer-menu-item">Footer Menu Item</a>
+          <a href="#" class="footer-menu-item">Footer Menu Item</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copy-right">
+      <p class="footer-copy-right-item">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}.
+        <a href="https://www.shopify.com/?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore">Powered By Shopify</a>
+      </p>
+      <div class="footer-copy-right-link-content">
+        <a href="#" class="footer-copy-right-item">Privacy Policy</a>
+        <a href="#" class="footer-copy-right-item">Terms and Condition</a>
       </div>
     </div>
   </div>
