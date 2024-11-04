@@ -23,6 +23,10 @@
           "label": "Logo width",
           "info": "Adjust the width of the logo. The recommended width is 90 pixels."
         },
+        "logo_max_height": {
+          "label": "Logo height",
+          "info": "Adjust the height of the logo. The recommended height is 50 pixels."
+        },
         "favicon_image": {
           "label": "Favicon",
           "info": "Upload an image to replace the default favicon. The recommended image size is 32 x 32 pixels."

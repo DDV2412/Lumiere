@@ -3,10 +3,10 @@
     <div class="navbar-top">
       <a href="{{ routes.root_url }}" class="brand-logo">
         <image
-          src="{{ settings.logo_image | image_url: width: 90, height: 32  }}"
+          src="{{ settings.logo_image | image_url: width: settings.logo_max_width, height: settings.logo_max_height  }}"
           alt="{{ shop.name }}"
           width="{{ settings.logo_max_width }}"
-          height="32" />
+          height="{{ settings.logo_max_height }}" />
       </a>
       <div class="navbar-top-right">
         <div class="navbar-top-right search-bar">

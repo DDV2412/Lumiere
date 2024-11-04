@@ -158,6 +158,22 @@ li {
     z-index: 9999;
 }
 
+.brand-logo,
+.footer-brand {
+    width: 100%;
+    max-width: 8em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: self-start;
+}
+
+.brand-logo img,
+.footer-brand img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
 .navbar .navbar-top .navbar-top-right {
     display: flex;
     align-items: center;

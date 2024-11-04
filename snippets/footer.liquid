@@ -7,10 +7,10 @@
       <div class="footer-content-item">
         <a href="{{ shop.url }}" class="footer-brand">
           <img
-            src="{{ settings.logo_image | image_url }}"
-            alt="Logo"
+            src="{{ settings.logo_image | image_url: width: settings.logo_max_width, height: settings.logo_max_height}}"
+            alt="{{ shop.name }}"
             width="{{ settings.logo_max_width }}"
-            height="40">
+            height="{{ settings.logo_max_height }}">
         </a>
         <div class="footer-content-description">Footer Description</div>
       </div>
