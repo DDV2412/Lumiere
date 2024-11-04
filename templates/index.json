@@ -97,7 +97,8 @@
             "title": "Explore Unique Styles",
             "description": "Our collection features timeless pieces crafted from premium fabrics, perfect for any occasion.",
             "url": "",
-            "url_title": "Discover Now"
+            "url_title": "Discover Now",
+            "image": "shopify://shop_images/46845.jpg"
           }
         }
       },
@@ -116,7 +117,8 @@
             "section_title": "For Sale",
             "section_tagline": "Explore Unique Styles",
             "collection_list": [
-
+              "autumn-layers",
+              "dresses"
             ]
           }
         }
